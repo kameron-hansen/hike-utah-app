@@ -1,0 +1,39 @@
+<% include ../partials/header %> 
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>
+                <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span> 
+                Welcome to Hike Utah 
+                <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span>
+                <p>View the best kid friendly trails</p>
+                <p>
+                    <a class="btn btn-primary btn-lg" href="/hikes/new">Add new hike</a>
+                </p>
+            </h1>
+        </div>
+    </header>
+    
+    <div class="row text-center">
+        <% hikes.forEach(function(hikes){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src="<%= hikes.image %>">
+                    <div class="caption">
+                        <h4>
+                            <%= hikes.name %>
+                        </h4>
+                    </div>
+                    <p>
+                        <a href="/hikes/<%= hikes._id %>" class="btn btn-primary">More Info</a>
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+    
+
+</div>
+
+<% include ../partials/footer %>
